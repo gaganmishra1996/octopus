@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: octopus-underwater-app
-          image: 735455110910.dkr.ecr.us-east-1.amazonaws.com/octopus-underwater-app
+          image: 735455110910.dkr.ecr.us-east-1.amazonaws.com/octopus-underwater-app:latest
           ports:
             - containerPort: 80
               protocol: TCP
