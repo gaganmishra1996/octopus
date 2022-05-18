@@ -27,7 +27,7 @@ pipeline {
         stage('Push') {
             steps {
                 script{
-                        docker.withRegistry('https://735455110910.dkr.ecr.us-east-1.amazonaws.com/octopus-underwater-app', 'ecr:us-east-1:aws-credentials') {
+                        docker.withRegistry('https://735455110910.dkr.ecr.us-east-1.amazonaws.com/octopus-underwater-app', 'ecr:us-east-1:AWS-CRED') {
                     app.push("${env.BUILD_NUMBER}")
                     app.push("latest")
                     }
