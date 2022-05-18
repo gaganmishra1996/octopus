@@ -1,25 +1,10 @@
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: v1
+kind: Pod
 metadata:
-  name: underwater-app-jenkins 
-  labels:
-    app: octopus-underwater-app
+ name: myapp-prod2
+ labels:
+     app: myapp
 spec:
-  selector:
-    matchLabels:
-        app: octopus-underwater-app
-  replicas: 3
-  strategy:
-    type: RollingUpdate
-  template:
-    metadata:
-      labels:
-        app: octopus-underwater-app
-    spec:
-      containers:
-        - name: octopus-underwater-app
-          image: 735455110910.dkr.ecr.us-east-1.amazonaws.com/octopus-underwater-app
-          ports:
-            - containerPort: 80
-              protocol: TCP
-          imagePullPolicy: Always
+  containers:
+    - name: nginx-container
+      image: nginx
